@@ -1,0 +1,31 @@
+{
+    "type": "node",
+    "request": "launch",
+    "name": "Node Project",
+    "skipFiles": [
+      "<node_internals>/**",
+      "node_modules/**"
+    ],
+    "runtimeExecutable": "npm",
+    "runtimeArgs": [
+      "start"
+    ],
+    "outputCapture": "std",
+    "cwd": "${workspaceFolder}",
+    "internalConsoleOptions": "openOnSessionStart",
+    "stopOnEntry": false,
+    "configurations": [
+        {
+            "command": "npm start",
+            "name": "Run npm start",
+            "request": "launch",
+            "type": "node-terminal"
+        }, 
+        {
+            "command": "ts-node ${file}",
+            "name": "Run ts-node",
+            "request": "launch",
+            "type": "node-terminal"
+        }
+    ]
+}
