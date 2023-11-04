@@ -1,105 +1,81 @@
 // Define the TypeScript models for each table
-
-// coupon model
 export interface Coupon {
-    idCoupon: number;
-    name: string;
-    discount: number;
+  Id_Coupon: number;
+  Name: string;
+  Discount: number;
 }
-
-// customer model
 export interface Customer {
-    idCustomer: number;
-    Name: string;
-    email: string | null;
-    password: string;
-    phone: string | null;
-    address: string;
-    point: number | null;
-    paymentMethod: string | null;
+  Id_Customer: number;
+  Name: string;
+  Email?: string;
+  Password: string;
+  Phone?: string;
+  Address: string;
+  Point?: number;
+  PaymentMethod?: string;
 }
-
-// employee model
 export interface Employee {
-    idEmployee: number;
-    name: string;
-    address: string;
-    phone: string | null;
-    role: string;
-    dayOfWork: string | null; // You can use 'Date' here if needed
+  Id_Employee: number;
+  Name: string;
+  Address: string;
+  Phone?: string;
+  Role: string;
+  DayOfWork?: string; // Use 'Date' if you want to store dates.
 }
-
-// feedback model
 export interface FeedBack {
-    idFeedBack: number;
-    title: string | null;
-    content: string;
-    idCustomer: number;
+  Id_FeedBack: number;
+  Title?: string;
+  Content: string;
+  Id_Customer: number;
 }
-
-// food model
 export interface Food {
-    idFood: number;
-    name: string;
-    des: string | null;
-    price: number;
-    quantity: number;
-    idFc: number;
-    idMaterial: number;
+  Id_Food: number;
+  Name: string;
+  Des?: string;
+  Price: number;
+  Quantity: number;
+  Id_FC: number;
+  Id_Material: number;
 }
-
-// foodCategory model
 export interface FoodCategory {
-    idFc: number;
-    name: string;
+  Id_FC: number;
+  Name: string;
 }
-
-// foodMaterial model
 export interface FoodMaterial {
-    foodIdFood: number;
-    materialIdMaterial: number;
+  Food_Id_Food: number;
+  Material_Id_Material: number;
 }
-
-// material model
 export interface Material {
-    idMaterial: number;
-    name: string;
-    quantity: number;
-    price: number;
-    idMc: number;
+  Id_Material: number;
+  Name: string;
+  Quantity: number;
+  Price: number;
+  Id_MC: number;
 }
-
-// materialCategory model
 export interface MaterialCategory {
-    idMc: number;
-    name: string;
+  Id_MC: number;
+  Name: string;
 }
-
-// orderFood model
 export interface OrderFood {
-    idOrder: number;
-    dayOrder: string; // You can use 'Date' here if needed
-    totalQuantity: number;
-    totalPrice: number;
-    idCustomer: number;
-    idEmployee: number;
-    idCoupon: number | null;
+  Id_Order: number;
+  DayOrder: string; // Use 'Date' if you want to store dates.
+  TotalQuantity: number;
+  TotalPrice: number;
+  Id_Customer: number;
+  Id_Employee: number;
+  Id_Coupon?: number;
 }
-
-// orderDetail model
 export interface OrderDetail {
-    idOrderDetail: number;
-    idFood: number;
-    quantity: number;
-    price: number;
-    idOrder: number;
+  Id_OrderDetail: number;
+  Id_Food: number;
+  Quantity: number;
+  Price: number;
+  Id_Order: number;
 }
-
-// workSchedule model
 export interface WorkSchedule {
-    idWorkSchedule: number;
-    workDate: number;
-    breakDate: number | null;
-    active: number;
-    idEmployee: number;
+  Id_WorkSchedule: number;
+  WorkDate: number;
+  BreakDate?: number;
+  Active: number;
+  Id_Employee: number;
 }
