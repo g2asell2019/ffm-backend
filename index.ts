@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 var CustomerRouter = require('./api/Customer/route');
 var FoodCategoryRouter = require('./api/FoodCategory/route');
 var MaterialCategoryRouter = require('./api/MaterialCategory/route');
+var MaterialRouter = require('./api/Material/route');
 
 const app = express();
 const port = process.env.PORT || 3030;
@@ -19,4 +20,5 @@ app.set('json spaces', '  ')
 app.use("/api", CustomerRouter as Router);
 app.use("/api", FoodCategoryRouter as Router);
 app.use("/api", MaterialCategoryRouter as Router);
+app.use("/api", MaterialRouter as Router);
 app.listen(port, () => console.log(`Server running at http://localhost:${port}`));
