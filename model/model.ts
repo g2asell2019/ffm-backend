@@ -36,6 +36,7 @@ export interface Food {
   Quantity: number;
   Id_FC: number;
   Id_Material: number;
+  Image: string;
 }
 export interface FoodCategory {
   Id_FC: number;

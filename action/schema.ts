@@ -63,6 +63,7 @@ export const food = mysqlTable("Food", {
 	quantity: int("Quantity").notNull(),
 	idFc: int("Id_FC").notNull(),
 	idMaterial: int("Id_Material").notNull(),
+	image: varchar("Image", { length: 4000 }),
 },
 	(table) => {
 		return {
