@@ -27,4 +27,5 @@ app.use("/api", MaterialRouter as Router);
 app.use("/api", FoodController as Router);
 app.use("/api", CouponController as Router);
 app.use("/api", EmployeeController as Router);
+app.use("/uploads/images", express.static("./content/images"));
 app.listen(port, () => console.log(`Server running at http://localhost:${port}`));
