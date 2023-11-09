@@ -36,6 +36,31 @@ router.route('/customer/:id')
         return res.json(await controller.delete(id))
     });
     
-  
+router.route('/customer/login')
+    .post(async function (req:Request, res:Response) {
+        const user:any = await controller.userLogin(req.body);
+        if (user["idCustomer"]) {
+            res.cookie("idCustomer", user["idCustomer"], {
+              path: "/",
+              httpOnly: true,
+              expires: new Date(Date.now() + 1000 * 86400),
+            });
+        }
+        return res.json(user);
+    })
+;
+router.route('/customer/signup')
+    .post(async function (req:Request, res:Response) {
+        const user:any = await controller.userSignup(req.body);
+          if (user["Id_Customer"]) {
+            res.cookie("idCustomer", user["Id_Customer"], {
+              path: "/",
+              httpOnly: true,
+              expires: new Date(Date.now() + 1000 * 86400),
+            });
+        }
+        return res.json(user);
+    })
+;
   
 module.exports = router;
