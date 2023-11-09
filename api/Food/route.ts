@@ -7,6 +7,18 @@ const router = express.Router();
 const controller = new FoodController();
 const dirpath = './content/images/'
 
+router.route('/food/findByPrice/')
+.get(async function(req:Request, res: Response) {
+    let {min, max} = req.query;
+    
+    return res.json(await controller.findByPrice(Number(min), Number(max)));
+})
+router.route('/food/sortByPrice/')
+.get(async function(req:Request, res: Response) {
+    const {ascending} = req.query;
+    let sortby = ascending === "true" ? true : false;
+    return res.json(await controller.sortByPrice(sortby));
+})
 router.route('/food')
     .get(async function(req:Request, res: Response) {
         return res.json(await controller.getAll());
@@ -52,6 +64,4 @@ router.route('/food/:id')
         return res.json(await controller.delete(id))
     });
     
-  
-  
 module.exports = router;
