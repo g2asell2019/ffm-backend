@@ -11,11 +11,13 @@ var FoodController = require('./api/Food/route');
 var CouponController = require('./api/Coupon/route');
 var EmployeeController = require('./api/Employee/route');
 
+const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 3030;
 
-app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use(cors({ origin: true }));
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(bodyParser.text());
 app.set('json spaces', '  ')
 
