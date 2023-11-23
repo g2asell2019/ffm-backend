@@ -20,6 +20,13 @@ export default class FoodController {
             )
         })
     }
+    async getByCategoryId(id :number){
+        return await this.db.query.food.findMany({
+            where: eq(
+                food.idFc, id
+            )
+        })
+    }
     async create(data:modelInterface.Food){
         const isSuccess = (await this.db.insert(modelTable.food).values(data as any)).rowsAffected;
         return isSuccess ? data : {};

@@ -21,6 +21,11 @@ router.route('/food/sortByPrice/')
 })
 router.route('/food')
     .get(async function(req:Request, res: Response) {
+        const { id_category } = req.query;
+        let id = utils.isNumeric(id_category + "") && parseInt(id_category + "");
+        if (id) {
+            return res.json(await controller.getByCategoryId(id));
+        }
         return res.json(await controller.getAll());
     })
     .post(async function (req:Request, res:Response) {
