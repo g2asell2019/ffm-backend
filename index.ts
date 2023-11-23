@@ -11,6 +11,7 @@ var FoodController = require('./api/Food/route');
 var CouponController = require('./api/Coupon/route');
 var EmployeeController = require('./api/Employee/route');
 var OrderController = require('./api/Order/route');
+var OrderDetailController = require('./api/OrderDetail/route');
 var VNPayRouter = require('./api/VNPay/route');
 
 const cors = require("cors");
@@ -30,6 +31,7 @@ app.use("/api", FoodController as Router);
 app.use("/api", CouponController as Router);
 app.use("/api", EmployeeController as Router);
 app.use("/api", OrderController as Router);
+app.use("/api", OrderDetailController as Router);
 app.use("/api", VNPayRouter as Router);
 app.use("/uploads/images", express.static("./content/images"));
 
