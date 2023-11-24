@@ -38,7 +38,7 @@ router.get('/vnpay/vnpay_return', function (req, res, next) {
 });
 
 //POST Method(s)
-router.post('/create_order', function (req, res, next) {
+router.post('/vnpay/create_order', function (req, res, next) {
   process.env.TZ = 'Asia/Ho_Chi_Minh';
   let date = new Date();
   let createDate = moment(date).format('YYYYMMDDHHmmss');
