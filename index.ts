@@ -35,4 +35,6 @@ app.use("/api", OrderDetailController as Router);
 app.use("/api", VNPayRouter as Router);
 app.use("/uploads/images", express.static("./content/images"));
 
+console.log(`Server is running on port ${port}`);
+
 app.listen(port, () => console.log(`Server running at http://localhost:${port}`));
