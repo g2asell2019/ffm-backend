@@ -1,0 +1,6 @@
+{
+        "vnp_TmnCode": "YOUR_TMN_CODE",
+        "vnp_HashSecret": "YOUR_HASH",
+        "vnp_Url": "YOUR_VNPAY_URL",
+        "vnp_ReturnUrl": "YOUR_RETURN_URL"
+}
